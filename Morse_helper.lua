@@ -55,7 +55,7 @@ title.TextColor3 = Color3.new(1,1,1)
 local box = Instance.new("TextBox", frame)
 box.Size = UDim2.new(0.9,0,0,40)
 box.Position = UDim2.new(0.05,0,0.45,0)
-box.PlaceholderText = "Texto → movimiento Morse"
+box.PlaceholderText = "Text → Morse Movement"
 box.Font = Enum.Font.Gotham
 box.TextScaled = true
 box.BackgroundColor3 = Color3.fromRGB(50,50,65)
@@ -125,10 +125,10 @@ end
 box.FocusLost:Connect(function(enter)
     if not enter or box.Text == "" then return end
     local morse = textToMorse(box.Text)
-    box.Text = "Ejecutando..."
+    box.Text = "Running..."
     moveInMorse(morse)
     task.wait(1)
-    box.Text = "Listo ✔"
+    box.Text = "Done!"
 end)
 
 ]])()
